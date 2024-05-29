@@ -21,7 +21,7 @@ defineProps({
       <div class="w-auto pr-10">
         <p>{{ title }}</p>
       </div>
-      <div class="flex-col w-1/5 my-auto">
+      <div class="flex-col w-2/5 my-auto">
         <p class="text-xl text-center text-blue-800 font-bold">{{ price }} ₽</p>
         <div class="flex justify-center">
           <button

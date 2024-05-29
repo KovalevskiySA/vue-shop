@@ -2,9 +2,19 @@
 import { ref, provide, watch } from 'vue'
 
 import Head from './components/Head.vue'
+import Status from './components/Status.vue'
 
 /* Корзина (START) */
 const cart = ref([])
+const statusOpen = ref(false)
+
+const closeStatus = () => {
+  statusOpen.value = false
+}
+
+const openStatus = () => {
+  statusOpen.value = true
+}
 
 const addToCart = (item) => {
   cart.value.push(item)
@@ -27,14 +37,17 @@ watch(
 provide('cart', {
   cart,
   addToCart,
-  removeFromCart
+  removeFromCart,
+  closeStatus,
+  openStatus
 })
 
 /* Корзина (END) */
 </script>
 
 <template>
-  <Head />
+  <Status v-if="statusOpen"/>
+  <Head @open-status="openStatus"/>
   <div>
     <router-view></router-view>
   </div>

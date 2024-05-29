@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: () =>import('@/pages/Home.vue')
+      component: () => import('@/pages/Home.vue')
     },
 
     {
@@ -19,6 +19,12 @@ const router = createRouter({
       path: '/cart',
       name: 'Drawer',
       component: () => import('@/pages/Drawer.vue')
+    },
+
+    {
+      path: '/status',
+      name: 'Status',
+      component: () => import('@/components/Status.vue')
     },
 
     {

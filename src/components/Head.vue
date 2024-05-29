@@ -1,4 +1,7 @@
-<script stup></script>
+<script setup>
+
+const emit = defineEmits(['openStatus'])
+</script>
 
 <template>
   <header class="flex justify-between bg-blue-100 shadow-lg border-slate-400 px-10 py-2">
@@ -12,12 +15,14 @@
       </div>
     </router-link>
     <ul class="flex items-center gap-5">
-      <router-link to="/product">
-        <li class="flex-col text-blue-800 font-bold cursor-pointer hover:text-black">
-          <img src="/status.svg" alt="Like-blue" class="mx-auto" />
-          <span>Статус заказа</span>
-        </li>
-      </router-link>
+      <li
+        @click="() => emit('openStatus')"
+        class="flex-col text-blue-800 font-bold cursor-pointer hover:text-black"
+      >
+        <img src="/status.svg" alt="Like-blue" class="mx-auto" />
+        <span>Статус заказа</span>
+      </li>
+
       <router-link to="/favorites">
         <li class="flex-col text-blue-800 font-bold cursor-pointer hover:text-black">
           <img src="/like-blue.svg" alt="Like-blue" class="mx-auto" />

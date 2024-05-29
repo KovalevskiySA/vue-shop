@@ -14,10 +14,14 @@ const emit = defineEmits(['addToFavorite', 'addToCart'])
     <Card
       v-for="item in items"
       :key="item.id"
-      :product="item"
-
-      @onClickFavorite="emit('addToFavorite', item)"
-      @onClickAdd="emit('addToCart', item)"
+      :id="item.id"
+      :title="item.title"
+      :imageUrl="item.imageUrl"
+      :price="item.price"
+      :onClickFavorite="isFavorites ? null : () => emit('addToFavorite', item)"
+      :onClickAdd="isFavorites ? null : () => emit('addToCart', item)"
+      :isFavorite="item.isFavorite"
+      :isAdded="item.isAdded"
     />
 
   </div>

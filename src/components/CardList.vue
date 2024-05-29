@@ -20,14 +20,5 @@ const emit = defineEmits(['addToFavorite', 'addToCart'])
       @onClickAdd="emit('addToCart', item)"
     />
 
-    <!--
-      <Card
-        title ="17.3 Ноутбук GIGABYTE B12VFK-463XRU черный Ноутбук" 
-        image-url="/products/image2.jpg" 
-        :price = "178000"
-        :isFavorite="true"
-        :onClickAdd = "onClickAdd"
-      />
-      -->
   </div>
 </template>
